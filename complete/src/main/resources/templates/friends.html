@@ -1,0 +1,171 @@
+<!DOCTYPE HTML>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <title>Getting Started: Handling Form Submission</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <style>
+        body, html{
+            height: 100%;
+        }
+
+        .hero-image{
+            height: 25%;
+            background-image: url('https://d2cx26qpfwuhvu.cloudfront.net/premier/wp-content/uploads/2018/02/10132831/contactus.jpg');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            position: relative;
+        }
+
+        .hero-text {
+            text-align: center;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: black;
+        }
+
+        .hero-text button{
+            padding: 10px;
+            margin: 1px;
+            font-family: Cambria;
+        }
+
+        .contactsBtn:hover{
+            color: red;
+            background-color: black;
+        }
+        .container {
+            border-radius: 5px;
+            background-color: #f2f2f2;
+            padding: 20px;
+            width: 100%; /* Full width */
+            height: 100%;
+            padding: 12px; /* Some padding */
+            border: 1px solid #ccc; /* Gray border */
+            border-radius: 4px; /* Rounded borders */
+            box-sizing: border-box; /* Make sure that padding and width stays in place */
+            margin-top: 6px; /* Add a top margin */
+            margin-bottom: 16px; /* Bottom margin */
+            resize: vertical; /* Allow the user to vertically resize the textarea (not horizontally) */
+        }
+
+        #contacts {
+            font-family: Arial, Helvetica, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+        #contacts td, #contacts th {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+        #contacts tr:hover {background-color: #ddd;}
+
+        #contacts th {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: left;
+            background-color: #04AA6D;
+            color: white;
+        }
+        #footer{
+            height: 100px;
+            width: 400px;
+        }
+        .flex-container {
+            display: flex;
+            background-color: DodgerBlue;
+        }
+        .flex-container > div {
+            background-color: #f1f1f1;
+            margin: 10px;
+            padding: 15px;
+            font-size: 24px;
+        }
+        .flex-container > div:hover{
+            background-color: #ddd;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+<div class="hero-image">
+    <div class="hero-text">
+        <h1 id="caption">Contact Form</h1>
+    </div>
+</div>
+<div class="flex-container">
+    <div><a class="active" onclick="nextPage()">View all contacts</a></div>
+    <div><a class="active" onclick="nextFamilyPage()">View all family contacts</a></div>
+    <div><a class="active" onclick="nextFreindsPage()">View all Friends contacts</a></div>
+    <div><a class="active" onclick="nextWorkPage()">View all Work contacts</a></div>
+    <div><a class="active" onclick="nextSearchPage()">Search contacts</a></div>
+    <div><a class="active" onclick="nextDeletePage()">Delete contacts</a></div>
+
+</div>
+<div class="container">
+    <h1>Friends</h1>
+    <table id="contacts">
+        <tr>
+            <th>Name</th>
+            <th>E-mail</th>
+            <th>Contact Number</th>
+            <th>Address</th>
+            <th>Group</th>
+            <th>Note</th>
+        </tr>
+        <tr th:each="greeting : ${friends}">
+            <div class="container2">
+                <td th:text= "${greeting.getName()}"> </td>
+                <td th:text="${greeting.getEmail()}"> </td>
+                <td th:text="${greeting.getPhone_no()}"> </td>
+                <td th:text="${greeting.getAddress()}"> </td>
+                <td th:text="${greeting.getCategory()}"> </td>
+                <td th:text="${greeting.getNote()}"> </td>
+            </div>
+        </tr>
+    </table>
+</div>
+
+<div id="footer"></div>
+
+<script type="text/javascript">
+
+    function nextPage(e){
+        window.location="norml"
+
+    }
+
+
+    function nextFamilyPage(e){
+        window.location="family"
+
+    }
+
+
+    function nextFreindsPage(e){
+        window.location="friends"
+
+    }
+
+
+    function nextWorkPage(e){
+        window.location="work"
+
+    }
+
+    function nextSearchPage(e){
+        window.location="search"
+
+    }
+
+    function nextDeletePage(e){
+        window.location="delete"
+
+    }
+
+</script>
+
+</body>
+</html>

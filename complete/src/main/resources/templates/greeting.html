@@ -1,0 +1,221 @@
+<!DOCTYPE HTML>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <title>Contact Form</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body, html{
+            height: 100%;
+        }
+
+        .hero-image{
+            height: 25%;
+            background-image: url('https://d2cx26qpfwuhvu.cloudfront.net/premier/wp-content/uploads/2018/02/10132831/contactus.jpg');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            position: relative;
+        }
+        #caption{
+            background-color: white;
+            padding: 4px;
+        }
+
+        .hero-text {
+            text-align: center;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: black;
+        }
+
+        .hero-text button{
+            padding: 10px;
+            margin: 1px;
+            font-family: Cambria;
+        }
+
+        .contactsBtn:hover{
+            color: red;
+            background-color: black;
+        }
+        .container {
+            border-radius: 5px;
+            background-color: #f2f2f2;
+            padding: 20px;
+        }
+        input[type=text], input[type=email] {
+            width: 100%; /* Full width */
+            padding: 12px; /* Some padding */
+            border: 1px solid #ccc; /* Gray border */
+            border-radius: 4px; /* Rounded borders */
+            box-sizing: border-box; /* Make sure that padding and width stays in place */
+            margin-top: 6px; /* Add a top margin */
+            margin-bottom: 16px; /* Bottom margin */
+            resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */
+        }
+        input[type=submit]{
+            background-color: skyblue;
+            color: black;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-left: 400px;
+        }
+        input[type=reset]{
+            background-color: red;
+            color: black;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-left: 400px;
+        }
+        #footer{
+            height: 100px;
+            width: 400px;
+        }
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+        }
+
+        :root {
+            --select-border: #777;
+            --select-focus: blue;
+            --select-arrow: var(--select-border);
+        }
+
+        select{
+            appearance: none;
+            background-color:whitesmoke;
+            padding: 10px;
+            margin: 0;
+            width: 100%;
+            font-family: inherit;
+            font-size: inherit;
+            cursor: inherit;
+            line-height: inherit;
+            z-index: 1;
+            border-width: 1px;
+            border-style: solid;
+
+        }
+
+        .select {
+            display: grid;
+            grid-template-areas: "select";
+            align-items: center;
+            position: relative;
+        }
+
+
+
+        .flex-container {
+            display: flex;
+            background-color: DodgerBlue;
+        }
+        .flex-container > div {
+            background-color: #f1f1f1;
+            margin: 10px;
+            padding: 15px;
+            font-size: 24px;
+        }
+        .flex-container > div:hover{
+            background-color: #ddd;
+            color: black;
+        }
+
+    </style>
+</head>
+<body>
+<div class="hero-image">
+    <div class="hero-text">
+        <h1 id="caption">Contact Form</h1>
+    </div>
+</div>
+<div class="flex-container">
+    <div><a class="active" onclick="nextPage()">View all contacts</a></div>
+    <div><a class="active" onclick="nextFamilyPage()">View all family contacts</a></div>
+    <div><a class="active" onclick="nextFreindsPage()">View all Friends contacts</a></div>
+    <div><a class="active" onclick="nextWorkPage()">View all Work contacts</a></div>
+    <div><a class="active" onclick="nextSearchPage()">Search contacts</a></div>
+    <div><a class="active" onclick="nextDeletePage()">Delete contacts</a></div>
+
+</div>
+
+
+<div class="container">
+    <form action="#" th:action="@{/greeting}" th:object="${greeting}" method="post">
+        <p>Name: <input type="text" th:field="*{name}" /></p>
+        <p>E-mail: <input type="email" th:field="*{email}" /></p>
+        <p>Contact Number: <input type="text" th:field="*{phone_no}" /></p>
+        <p>Full Adress: <input type="text" th:field="*{address}" /></p>
+        <p>Note: <input type="text" th:field="*{note}" /></p>
+
+        <label>Priority</label>
+        <div class="select">
+            <select th:field="*{category}" id="standard-select">
+                <option value="family">Family</option>
+                <option value="friend">Friend</option>
+                <option value="work">Work</option>
+            </select>
+        </div>
+
+        <p><input type="submit" value="Submit" onclick="showConfirmation()" /> <input type="reset" value="Reset" /></p>
+    </form>
+</div>
+<div id="footer"></div>
+
+<script type="text/javascript">
+
+    function showConfirmation(e){
+        window.confirm("Contact added successfully");
+    }
+
+
+    function nextPage(e){
+        window.location="norml"
+
+    }
+
+
+    function nextFamilyPage(e){
+        window.location="family"
+
+    }
+
+
+    function nextFreindsPage(e){
+        window.location="friends"
+
+    }
+
+
+    function nextWorkPage(e){
+        window.location="work"
+
+    }
+
+    function nextSearchPage(e){
+        window.location="search"
+
+    }
+
+    function nextDeletePage(e){
+        window.location="delete"
+
+    }
+
+
+
+
+
+</script>
+
+</body>
+</html>
