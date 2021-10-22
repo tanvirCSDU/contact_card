@@ -93,27 +93,28 @@ include::complete/src/main/resources/templates/delete.html[]
 ----
 ====
 
-image::{images}/submit1.png[contact submit]
+image::images/submit1.png[contact submit]
 
-image::{images}/submit1.5.png[contact submit confirmation]'
 
-image::{images}/submit2.png[contact added result]
+image::images/submit1.5.png[contact submit confirmation]'
 
-image::{images}/all.png[all contact]
+image::images/submit2.png[contact added result]
 
-image::{images}/family.png[family contact]
+image::images/all.png[all contact]
 
-image::{images}/friends.png[friends contact]
+image::images/family.png[family contact]
 
-image::{images}/work.png[work contact]
+image::images/friends.png[friends contact]
 
-image::{images}search.png[search contact]
+image::images/work.png[work contact]
 
-image::{images}/searchres.png[search result]
+image::images/search.png[search contact]
 
-image::{images}/delete.png[delete contact]
+image::images/searchres.png[search result]
 
-image::{images}/deleteRes.png[delete result]
+image::images/delete.png[delete contact]
+
+image::images/deleteRes.png[delete result]
 
 
 
