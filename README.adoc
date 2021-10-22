@@ -1,10 +1,98 @@
-#About This Project
-This is a java springboot based project developed for Contact management.
 
-#Features
-##Add Contact
-##View Contacat by Catagory
-##Delete Contact
-##Search Contact
+This guide walks you through the web project. This is a java spring boot based project aided for contact management. 
 
-#Build & Run
+== Build
+
+The initial web page will be accessible at the following URL:
+`http://localhost:8080/greeting`
+
+Viewing this page in a browser will display the form to add contacts. You can submit a contact by
+populating the name, phone_no, addrees, email and note fields. A results page will be displayed when the contact is added.
+
+
+
+Web pages and features:
+
+Adding contacts
+
+====
+[source,html]
+----
+include::complete/src/main/resources/templates/greeting.html[]
+----
+====
+
+Result after adding contacts
+
+====
+[source,html]
+----
+include::complete/src/main/resources/templates/result.html[]
+----
+====
+
+Viewing all contacts
+
+====
+[source,html]
+----
+include::complete/src/main/resources/templates/norml.html[]
+----
+====
+
+Viewing all family contacts
+
+====
+[source,html]
+----
+include::complete/src/main/resources/templates/family.html[]
+----
+====
+
+Viewing all friends contacts
+====
+[source,html]
+----
+include::complete/src/main/resources/templates/family.html[]
+----
+====
+
+
+Viewing all work contacts
+====
+[source,html]
+----
+include::complete/src/main/resources/templates/work.html[]
+----
+====
+
+Search contacts
+
+====
+[source,html]
+----
+include::complete/src/main/resources/templates/search.html[]
+----
+====
+
+Search result
+
+====
+[source,html]
+----
+include::complete/src/main/resources/templates/searchRes.html[]
+----
+====
+
+Delete Contacts
+
+====
+[source,html]
+----
+include::complete/src/main/resources/templates/delete.html[]
+----
+====
+
+
+
+
