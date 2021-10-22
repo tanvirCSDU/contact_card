@@ -1,1 +1,10 @@
+#About This Project
+This is a java springboot based project developed for Contact management.
 
+#Features
+##Add Contact
+##View Contacat by Catagory
+##Delete Contact
+##Search Contact
+
+#Build & Run
